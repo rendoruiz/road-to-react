@@ -19,7 +19,7 @@ const list = [
   },
 ];
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <h1>My Hacker Stories</h1>
@@ -33,10 +33,10 @@ function App() {
   );
 }
 
-function List(props) {
+const List = (props) => {
   return ( 
     <ul>
-      {props.list.map(function (item) { 
+      {props.list.map((item) => { 
         return ( 
           <Item key={item.objectID} item={item} />
         ); 
@@ -45,7 +45,7 @@ function List(props) {
   );
 }
 
-function Item(props) {
+const Item = (props) => {
   return (
     <li> 
       <span> 
@@ -58,7 +58,7 @@ function Item(props) {
   )
 }
 
-function Search() {
+const Search = () => {
   return (
     <div>
       <label htmlFor="search">Search: </label> 
