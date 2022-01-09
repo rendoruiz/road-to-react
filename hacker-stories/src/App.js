@@ -24,32 +24,46 @@ function App() {
     <div className="App">
       <h1>My Hacker Stories</h1>
 
-      <label htmlFor="search">Search: </label> 
-      <input id="search" type="text" />
+      <Search />
 
       <hr />
 
-      <List />
+      <List list={list} />
     </div>
   );
 }
 
-function List() {
+function List(props) {
   return ( 
     <ul>
-      {list.map(function (item) { 
+      {props.list.map(function (item) { 
         return ( 
-          <li key={item.objectID}> 
-            <span> 
-              <a href={item.url}>{item.title}</a> 
-            </span>
-            <span>{item.author}</span> 
-            <span>{item.num_comments}</span> 
-            <span>{item.points}</span>
-          </li> 
+          <Item key={item.objectID} item={item} />
         ); 
       })} 
     </ul>
+  );
+}
+
+function Item(props) {
+  return (
+    <li> 
+      <span> 
+        <a href={props.item.url}>{props.item.title}</a> 
+      </span>
+      <span>{props.item.author}</span> 
+      <span>{props.item.num_comments}</span> 
+      <span>{props.item.points}</span>
+    </li> 
+  )
+}
+
+function Search() {
+  return (
+    <div>
+      <label htmlFor="search">Search: </label> 
+      <input id="search" type="text" />
+    </div>
   );
 }
 
