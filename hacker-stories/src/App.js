@@ -19,52 +19,44 @@ const list = [
   },
 ];
 
-const App = () => {
-  return (
-    <div className="App">
-      <h1>My Hacker Stories</h1>
+const App = () => (
+  <div className="App">
+    <h1>My Hacker Stories</h1>
 
-      <Search />
+    <Search />
 
-      <hr />
+    <hr />
 
-      <List list={list} />
-    </div>
-  );
-}
+    <List list={list} />
+  </div>
+);
 
-const List = (props) => {
-  return ( 
-    <ul>
-      {props.list.map((item) => { 
-        return ( 
-          <Item key={item.objectID} item={item} />
-        ); 
-      })} 
-    </ul>
-  );
-}
+const List = (props) => ( 
+  <ul>
+    {props.list.map((item) => { 
+      return ( 
+        <Item key={item.objectID} item={item} />
+      ); 
+    })} 
+  </ul>
+);
 
-const Item = (props) => {
-  return (
-    <li> 
-      <span> 
-        <a href={props.item.url}>{props.item.title}</a> 
-      </span>
-      <span>{props.item.author}</span> 
-      <span>{props.item.num_comments}</span> 
-      <span>{props.item.points}</span>
-    </li> 
-  )
-}
+const Item = (props) => (
+  <li> 
+    <span> 
+      <a href={props.item.url}>{props.item.title}</a> 
+    </span>
+    <span>{props.item.author}</span> 
+    <span>{props.item.num_comments}</span> 
+    <span>{props.item.points}</span>
+  </li> 
+);
 
-const Search = () => {
-  return (
-    <div>
-      <label htmlFor="search">Search: </label> 
-      <input id="search" type="text" />
-    </div>
-  );
-}
+const Search = () => (
+  <div>
+    <label htmlFor="search">Search: </label> 
+    <input id="search" type="text" />
+  </div>
+);
 
 export default App;
