@@ -33,11 +33,9 @@ const App = () => (
 
 const List = (props) => ( 
   <ul>
-    {props.list.map((item) => { 
-      return ( 
-        <Item key={item.objectID} item={item} />
-      ); 
-    })} 
+    {props.list.map((item) => ( 
+      <Item key={item.objectID} item={item} />
+    ))} 
   </ul>
 );
 
